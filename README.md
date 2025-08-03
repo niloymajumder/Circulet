@@ -56,5 +56,5 @@ Built with modern web technologies, AI-powered waste recognition, and circular e
 | `/docs` | Specs, roadmap, contribution guides |
 
 ```bash
-git clone https://github.com/YOUR_ORG/RecycLink.git
-cd RecycLink
+git clone https://github.com/YOUR_ORG/circulet.git
+cd Circulet
