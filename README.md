@@ -9,11 +9,17 @@ Built with modern web technologies, AI-powered waste recognition, and circular e
 ## 🌟 Features
 
 ♻️ AI-based waste image recognition (like Google Lens for recyclables)
+
 🔁 Real-time waste exchange marketplace
+
 🧠 Data insights for recycling trends and optimization
+
 🌱 Built for urban and industrial circular economies
+
 ✅ Real-time impact dashboard
+
 ✨ Role-based dashboards for users, collectors, and admins  
+
 📍 Hyper-local ecosystem integration (municipal, NGOs, recyclers, etc.)
 
 ---
