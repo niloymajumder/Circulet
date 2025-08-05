@@ -1,0 +1,7 @@
+{
+  "name": "Circulet: Smart Waste Sorter",
+  "description": "A web-based application that uses AI-powered image recognition to identify waste items and provide users with detailed instructions on how to properly dispose of, recycle, or reuse them according to local guidelines.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
