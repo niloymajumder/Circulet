@@ -2,13 +2,11 @@
 import { GoogleGenAI, Type } from "@google/genai";
 import { WasteAnalysis, DisposalMethod } from "../types";
 
-const API_KEY = process.env.API_KEY;
-
-if (!API_KEY) {
-  throw new Error("API_KEY environment variable not set");
-}
-
-const ai = new GoogleGenAI({ apiKey: API_KEY });
+// The API_KEY is expected to be set in the deployment environment (e.g., Netlify, Render).
+// We initialize the client here. If the key is missing, the SDK will throw an error 
+// during the API call, which is caught gracefully by the App component,
+// preventing the app from crashing on load.
+const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
 const responseSchema = {
     type: Type.OBJECT,
@@ -82,6 +80,7 @@ export async function analyzeWasteImage(imageBase64: string, location: string): 
 
   } catch (error) {
     console.error("Error calling Gemini API:", error);
-    throw new Error("Failed to get analysis from Gemini API.");
+    // Forward the error to be handled by the UI component
+    throw new Error("Failed to get analysis from Gemini API. This could be due to a network issue or missing API key in the environment configuration.");
   }
 }

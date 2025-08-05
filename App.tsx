@@ -3,7 +3,11 @@ import React, { useState, useCallback } from 'react';
 import { ImageUploader } from './components/ImageUploader';
 import { AnalysisResultCard } from './components/AnalysisResultCard';
 import { analyzeWasteImage } from './services/geminiService';
+<<<<<<< HEAD
 import { WasteAnalysis, UploaderMode } from './types';
+=======
+import { WasteAnalysis } from './types';
+>>>>>>> d1a2f920a1c57cba3f47e19dae7a90a91fba6361
 import { LeafIcon } from './components/icons/LeafIcon';
 import { SpinnerIcon } from './components/icons/SpinnerIcon';
 
@@ -14,7 +18,10 @@ export default function App(): React.ReactNode {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
   const [showLocationError, setShowLocationError] = useState<boolean>(false);
+<<<<<<< HEAD
   const [mode, setMode] = useState<UploaderMode>('upload');
+=======
+>>>>>>> d1a2f920a1c57cba3f47e19dae7a90a91fba6361
 
   const handleAnalyze = useCallback(async () => {
     if (!image) {
@@ -49,7 +56,10 @@ export default function App(): React.ReactNode {
     setAnalysis(null);
     setError(null);
     setIsLoading(false);
+<<<<<<< HEAD
     setMode('upload');
+=======
+>>>>>>> d1a2f920a1c57cba3f47e19dae7a90a91fba6361
   };
 
   return (
@@ -66,7 +76,11 @@ export default function App(): React.ReactNode {
         <div className="bg-white rounded-2xl shadow-lg p-6 sm:p-8 transition-all duration-500">
           {!analysis && !isLoading && (
             <div>
+<<<<<<< HEAD
               <ImageUploader onImageReady={setImage} image={image} mode={mode} onModeChange={setMode} />
+=======
+              <ImageUploader onImageReady={setImage} image={image} />
+>>>>>>> d1a2f920a1c57cba3f47e19dae7a90a91fba6361
               {image && (
                 <div className="mt-6">
                    <div className="relative">

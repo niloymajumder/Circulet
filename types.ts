@@ -1,6 +1,9 @@
 
+<<<<<<< HEAD
 export type UploaderMode = 'upload' | 'camera';
 
+=======
+>>>>>>> d1a2f920a1c57cba3f47e19dae7a90a91fba6361
 export enum DisposalMethod {
   RECYCLE = 'RECYCLE',
   COMPOST = 'COMPOST',

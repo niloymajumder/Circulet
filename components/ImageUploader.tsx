@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 import React, { useState, useRef, useCallback, useEffect } from 'react';
 import { CameraIcon } from './icons/CameraIcon';
 import { UploadIcon } from './icons/UploadIcon';
@@ -13,6 +14,22 @@ interface ImageUploaderProps {
 }
 
 export const ImageUploader: React.FC<ImageUploaderProps> = ({ onImageReady, image, mode, onModeChange }) => {
+=======
+import React, { useState, useRef, useCallback } from 'react';
+import { CameraIcon } from './icons/CameraIcon';
+import { UploadIcon } from './icons/UploadIcon';
+import { XCircleIcon } from './icons/XCircleIcon';
+
+interface ImageUploaderProps {
+  onImageReady: (base64Image: string) => void;
+  image: string | null;
+}
+
+type Mode = 'upload' | 'camera';
+
+export const ImageUploader: React.FC<ImageUploaderProps> = ({ onImageReady, image }) => {
+  const [mode, setMode] = useState<Mode>('upload');
+>>>>>>> d1a2f920a1c57cba3f47e19dae7a90a91fba6361
   const [isCameraOn, setIsCameraOn] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -73,6 +90,7 @@ export const ImageUploader: React.FC<ImageUploaderProps> = ({ onImageReady, imag
     }
   };
   
+<<<<<<< HEAD
   const handleModeChange = (newMode: UploaderMode) => {
     if (mode === newMode) return;
     stopCamera();
@@ -94,6 +112,18 @@ export const ImageUploader: React.FC<ImageUploaderProps> = ({ onImageReady, imag
 
   const clearImage = () => {
     onImageReady(null);
+=======
+  const handleModeChange = (newMode: Mode) => {
+    stopCamera();
+    setMode(newMode);
+    if(newMode === 'camera') {
+        startCamera();
+    }
+  };
+
+  const clearImage = () => {
+    onImageReady(''); // Use empty string to signify clearing
+>>>>>>> d1a2f920a1c57cba3f47e19dae7a90a91fba6361
   };
 
   return (
@@ -132,7 +162,11 @@ export const ImageUploader: React.FC<ImageUploaderProps> = ({ onImageReady, imag
             </div>
           ) : (
             <div className="w-full h-full relative">
+<<<<<<< HEAD
               <video ref={videoRef} autoPlay playsInline className="w-full h-full object-cover bg-black"></video>
+=======
+              <video ref={videoRef} autoPlay playsInline className="w-full h-full object-cover"></video>
+>>>>>>> d1a2f920a1c57cba3f47e19dae7a90a91fba6361
               {isCameraOn && (
                 <button onClick={captureImage} className="absolute bottom-4 left-1/2 -translate-x-1/2 w-16 h-16 bg-white rounded-full border-4 border-eco-green hover:bg-gray-200 transition-colors flex items-center justify-center">
                   <CameraIcon className="w-8 h-8 text-eco-green" />
@@ -145,4 +179,8 @@ export const ImageUploader: React.FC<ImageUploaderProps> = ({ onImageReady, imag
       </div>
     </div>
   );
+<<<<<<< HEAD
 };
+=======
+};
+>>>>>>> d1a2f920a1c57cba3f47e19dae7a90a91fba6361
